@@ -1,0 +1,4 @@
+CATEGORIES
+Fruits
+Veggies
+Meat

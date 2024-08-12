@@ -1,0 +1,12 @@
+# ninja log v6
+7	576	1723490301407828971	CMakeFiles/Catapult.dir/cpp/StrategyB3CF.cpp.o	43291f4862c857f7
+3	73	1723491305301287933	build.ninja	efe36555afb150e9
+580	669	1723490655199830548	Catapult	6631a6e179552316
+6	515	1723490301407419008	CMakeFiles/Catapult.dir/cpp/StrategyB2G1.cpp.o	bea1547e7536d0a7
+5	580	1723490654624886601	CMakeFiles/Catapult.dir/cpp/Checkout.cpp.o	b584f02b4357f27d
+6	420	1723490654625548430	CMakeFiles/Catapult.dir/cpp/Driver.cpp.o	561d007b22adc594
+4	455	1723491352957312948	CMakeFiles/Catapult.dir/cpp/Driver.cpp.o	a3d6710af61662f7
+4	466	1723491352957030699	CMakeFiles/Catapult.dir/cpp/StrategyB2G1.cpp.o	352c57c66cd4e4ae
+4	534	1723491352957174823	CMakeFiles/Catapult.dir/cpp/StrategyB3CF.cpp.o	112bdb21d28aebf4
+4	609	1723491352956679868	CMakeFiles/Catapult.dir/cpp/Checkout.cpp.o	e36ff830e2332958
+609	704	1723491353562480406	Catapult	6631a6e179552316

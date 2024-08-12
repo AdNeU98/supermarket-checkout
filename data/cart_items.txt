@@ -1,0 +1,4 @@
+Apples,Fruits,2.5,4
+Grapes,Fruits,1.50,2
+Lays,Snacks,3.99,3
+Chicken,Meat,14.99,3
