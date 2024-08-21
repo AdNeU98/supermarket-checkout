@@ -12,6 +12,7 @@ double StartegyB3CF::applyDiscountStrategy(vector<Item> &storedItems, unordered_
     double discount = 0;
     unordered_map<string, vector<pair<double, Item>>> storeItemsByCategory;
 
+    // storing category wise data in map
     for (Item& eachItem : storedItems) {
         if (eachItem.getQuantity() != 0 &&
             discountedCategories.find(eachItem.getCategory()) != discountedCategories.end()) {
@@ -21,19 +22,23 @@ double StartegyB3CF::applyDiscountStrategy(vector<Item> &storedItems, unordered_
         }
     }
 
+    // for each category - calculate the discount
     for(const auto& [category, items] : storeItemsByCategory){
+
         vector<pair<double,Item>> categorizedData = items;
+        int totalQuantityOfCategory = 0;
+        int countSets = 0;
+        int index = 0;
+
         sort(categorizedData.begin(), categorizedData.end(), [](const auto& a, const auto& b) {
             return a.first < b.first;
         });
-        int totalQuantityOfCategory = 0;
+
         for (const pair<double, Item>& eachItem : categorizedData) {
             totalQuantityOfCategory += eachItem.second.getQuantity();
         }
 
         int totalSets = totalQuantityOfCategory/COUNT_OF_ITEMS_IN_SET;
-        int countSets = 0;
-        int index = 0;
         if (totalSets >= 1) {
             while (countSets < totalSets) {
                 int currentItemQuantity = categorizedData[index].second.getQuantity();
@@ -46,9 +51,7 @@ double StartegyB3CF::applyDiscountStrategy(vector<Item> &storedItems, unordered_
                     cout << "Item discounted : " << currentItemName
                               << " | Price = " << currentItemPrice << " | B3CF" <<endl;
                 }
-                if (countSets < totalSets) {
-                    ++index;
-                }
+                ++index;
             }
         }
     }

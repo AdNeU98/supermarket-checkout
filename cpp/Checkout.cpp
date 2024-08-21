@@ -58,20 +58,16 @@ void Checkout::populateItems() {
             if (bindInputs.find(name) == bindInputs.end()) {
                 bindInputs[name] = obj;
             } else {
-                Item currObj = bindInputs[name];
-
+                Item& currObj = bindInputs[name];
                 if(currObj.getPrice() != price){
                     faultInput = true;
                     return;
                 }
-
                 int prevQuantity = currObj.getQuantity();
                 currObj.setQuantity(prevQuantity + quantity);
-                bindInputs[name] = currObj;
             }
         }
-
-        for (const auto& eachEntry : bindInputs) {
+        for (const pair<string, Item> eachEntry : bindInputs) {
             storeItems.push_back(eachEntry.second);
         }
     } catch (const exception& e) {
@@ -92,14 +88,14 @@ void Checkout::calculateTotalPriceBeforeDiscount() {
 }
 
 void Checkout::displayItems() {
-    for (const auto& each: storeItems) {
+    for (const Item& each: storeItems) {
         cout<<each.getName()<<" | "<<each.getCategory()<<" | "<<each.getPrice()<<" | "<<each.getQuantity()<<endl;
     }
     cout<<endl;
 }
 
 void Checkout::calculateDiscount() {
-    for (unique_ptr<IDiscountStrategy> & strategyPtr : strategies) {
+    for (unique_ptr<IDiscountStrategy>& strategyPtr : strategies) {
         totalDiscount += strategyPtr->applyDiscountStrategy(storeItems, discountedCategories);
     }
 }

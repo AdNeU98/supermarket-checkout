@@ -18,6 +18,7 @@ private:
     double totalDiscount;
     unordered_set<string> discountedCategories;
     Checkout(): totalCostAfterDiscount(0.0), totalCostBeforeDiscount(0.0), totalDiscount(0.0) {}
+    bool faultInput = false;
 public:
     /* starts the checkout process and acts as a controller */
     static void initialiseCheckout();
@@ -64,7 +65,6 @@ public:
     /* method required to check if data exists in data/ */
     bool checkIfDataExists();
 
-    bool faultInput = false;
 };
 
 #endif // CHECKOUT_H
